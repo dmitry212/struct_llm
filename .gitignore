@@ -40,8 +40,4 @@ ENV/
 
 # OS
 .DS_Store
-Thumbs.db
-
-# Jupyter Notebook
-.ipynb_checkpoints
-*.ipynb.meta 
+Thumbs.db 
