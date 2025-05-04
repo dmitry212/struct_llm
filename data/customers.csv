@@ -1,0 +1,101 @@
+customer_id,first_name,last_name,email,phone,address,city,state,zip_code,date_of_birth,age
+CUST000,Lauren,Henry,johnsonrichard@example.net,664.398.5997x72353,558 Figueroa Station Apt. 162,Williamsbury,MO,52527,1973-07-21,51
+CUST001,Diana,Wood,juliebrown@example.com,630.787.7924,069 Holly View,East Benjaminburgh,UT,54582,1981-08-18,43
+CUST002,Trevor,Perez,oroberts@example.com,6127674917,8698 Kyle Springs Suite 766,West Kristin,MI,61788,1987-11-13,37
+CUST003,Eric,Johnson,lhodges@example.com,+1-353-964-1444x4603,66255 Cox Shoal Apt. 330,West Kaylaland,WV,33571,1996-11-01,28
+CUST004,David,Lamb,rebekah60@example.net,001-953-366-7060x039,8463 Kimberly Summit Apt. 606,South Timothy,TX,33450,1995-07-06,29
+CUST005,Brandon,Camacho,diane06@example.net,001-996-280-2326x0382,356 Brenda Skyway,Ortizbury,RI,81860,1961-10-24,63
+CUST006,Daniel,Smith,darrell51@example.com,625.295.4226,86650 Gaines Expressway,Port Stephenburgh,MD,05146,1982-05-08,43
+CUST007,Joseph,Patel,udavis@example.org,+1-927-449-0345x645,5185 Cannon Bridge,Annaburgh,HI,83895,1993-10-18,31
+CUST008,Elizabeth,Allen,jamiepearson@example.net,001-951-588-5054x209,8443 Duffy Dale,Michaelhaven,AS,09376,1950-08-07,74
+CUST009,David,Bird,natalie69@example.com,001-736-716-7916x62137,290 Steven Roads,Smithville,NH,43874,1960-08-30,64
+CUST010,Robert,Martin,dosborne@example.org,7695748909,12069 Murray Street,West Kennethhaven,ND,12817,1981-06-18,43
+CUST011,Christopher,Alvarez,travis71@example.org,816.812.8306x933,809 Ashley Brook,New Aaron,DE,72502,1973-01-22,52
+CUST012,Linda,Mckinney,adrian95@example.com,001-947-727-8712,90312 Jones Meadows Apt. 422,Bauerberg,DE,08016,1957-11-28,67
+CUST013,Laura,Fuller,qjohnson@example.net,687.971.0116x34401,0111 Quinn Centers,Foxborough,LA,33483,1965-08-03,59
+CUST014,Emily,Schmitt,kthomas@example.org,001-640-226-0942,163 Vasquez Pine,Andersonland,MI,11914,1971-05-14,54
+CUST015,Jamie,Pierce,owilliams@example.com,(718)418-3170x649,955 Daniel Skyway Suite 435,Alvaradoside,IL,38614,1958-10-11,66
+CUST016,Kathy,Haynes,hamiltonpatty@example.org,765.626.7004x4912,247 Kimberly Corner,Vangton,IA,48133,1985-05-20,39
+CUST017,Stephanie,Skinner,thomasarroyo@example.com,+1-597-326-5855x698,4800 Sanford Islands Suite 943,Lake Alexis,MH,82545,1990-07-17,34
+CUST018,Lisa,Burns,leemolly@example.org,606.608.4137x821,2815 Watts Vista Suite 395,East Anitaland,MN,57553,1962-03-27,63
+CUST019,Karen,Howard,wpalmer@example.net,553-223-7801,65264 Kayla Extensions,North Daniel,NM,74574,1954-05-20,71
+CUST020,Melissa,Chan,brandon85@example.com,001-462-893-2176x187,27634 Dean Mills Suite 655,South Kevin,WV,48107,1968-09-16,56
+CUST021,Alfred,Kline,david77@example.org,999-471-8662,195 Buck Highway,Port Matthew,FL,66239,1969-01-24,56
+CUST022,Catherine,Stephens,davidmcdonald@example.net,9127797873,19700 Vega Drives,South David,AK,09757,1965-02-15,60
+CUST023,Blake,Martinez,justinfisher@example.com,+1-410-912-4164x58513,62461 Monica Falls,West Stephanie,NY,64402,1976-01-03,49
+CUST024,Richard,Byrd,cooperstephanie@example.com,969-541-4205x9346,938 Willis Trail Apt. 601,East Kylefort,MO,96777,1967-04-29,58
+CUST025,Valerie,Scott,uwyatt@example.com,001-970-881-3358x6182,775 Sims Locks Apt. 196,Chapmanshire,ND,14711,1949-11-09,75
+CUST026,Charles,Moses,ricardo13@example.net,448.465.9315x2976,3785 Cynthia Lock Suite 556,Elliotthaven,MD,55145,1954-05-25,70
+CUST027,Erik,Miller,rnelson@example.net,619-957-6136x7818,528 Owen Junction,Brandyberg,MO,64252,1967-02-28,58
+CUST028,Paul,Hudson,vmccoy@example.com,+1-790-282-6021,7289 Shirley Points Apt. 345,North Anthony,WV,59646,1982-03-27,43
+CUST029,Melissa,Coffey,ianbentley@example.org,5129155698,3013 Cassandra Mill Suite 066,Taramouth,AL,71854,1994-01-15,31
+CUST030,Nichole,Alexander,ballen@example.com,660-419-4180,33461 Spears Harbor,West Matthew,PA,35041,1953-11-15,71
+CUST031,Daniel,Gibson,meganproctor@example.net,974.484.4461x147,46882 Amanda Pass Suite 368,Pennyland,VT,14546,1972-01-24,53
+CUST032,Kristen,Bowers,wtorres@example.org,+1-923-503-8200x304,0067 Jessica Walks Apt. 727,Lake Phillip,TX,44261,1976-02-12,49
+CUST033,James,Thompson,dennis09@example.org,870.616.3656x652,998 Jessica Ports,North Laura,WV,09104,1988-11-18,36
+CUST034,Denise,Tucker,milleramy@example.org,001-315-798-0041,82916 William Ford,Blakefort,LA,16725,1958-05-12,67
+CUST035,Jesus,Wilson,katherine35@example.com,+1-339-883-2844x603,45200 Anderson Station Apt. 042,North Thomas,WV,65516,1979-06-24,45
+CUST036,Margaret,Campbell,xrocha@example.com,001-915-337-4200,4077 Jessica Crest Apt. 220,Briggsville,NH,69828,1998-01-17,27
+CUST037,Denise,Garcia,bmoore@example.org,(341)939-9558x24232,68353 Burns Light Apt. 233,Joshuaview,TN,27613,1994-09-24,30
+CUST038,Tracie,Krueger,harperreginald@example.com,+1-201-676-5943x160,80091 Brooks Plain Apt. 660,Jessicaborough,AK,01972,1989-05-11,36
+CUST039,Ryan,Howard,adamhess@example.com,257.432.3638x6375,3059 Gordon Corners Suite 397,East James,NM,07437,1986-12-25,38
+CUST040,Alfred,Arellano,stacy62@example.org,943.497.7808,11760 Jesse Mountain,New Glendamouth,TX,23439,1992-03-16,33
+CUST041,Jennifer,Hansen,victoriahubbard@example.org,(625)264-2423,029 Price Avenue Apt. 781,Port Shane,TX,32023,1997-06-16,27
+CUST042,Alexandria,Oneal,sarahsanchez@example.net,680-256-6470x538,32513 Rodriguez Pine,Brycestad,PW,33028,1977-11-25,47
+CUST043,Brooke,Fuentes,patricia57@example.net,400-949-1703x7868,93243 Sara Road Apt. 147,Melissastad,IN,70578,1992-12-01,32
+CUST044,Anthony,Galloway,sbenson@example.org,749-649-7984x5847,9670 Butler Station Apt. 082,North Amanda,UT,14100,1957-11-18,67
+CUST045,Tyler,Gordon,donaldsonmichael@example.com,271.678.9970x0797,5885 Johnson Ridges,Sandraside,ND,45994,1975-11-06,49
+CUST046,Mary,Thomas,amberfisher@example.net,(890)326-7640x7280,60651 Lloyd Prairie Apt. 362,Port Joseph,OH,73903,1999-07-04,25
+CUST047,Beth,Nguyen,ingramleslie@example.com,707-468-8796,694 Graham Knoll Apt. 771,Port Duane,HI,87429,1959-04-02,66
+CUST048,John,Peterson,travisyoder@example.com,001-453-274-4867x7294,2324 Jason Mill Suite 651,Port Brendachester,CT,83433,1953-05-12,72
+CUST049,Wendy,Barr,adamsrachael@example.org,+1-233-770-4341x39189,97572 Ward Course,Port Samantha,UT,46498,1980-10-29,44
+CUST050,Thomas,Ward,barbaramarshall@example.net,211-524-2967,78678 Tara Avenue,Port Michael,MI,06340,1985-06-22,39
+CUST051,Douglas,Richard,blopez@example.com,+1-972-713-5473x775,72150 Tyler Station,Port Stephenton,CT,43152,1987-05-30,37
+CUST052,Derek,Miller,bernard40@example.com,938.896.6079x51307,2072 Floyd Gateway,Troystad,OK,30676,1982-04-24,43
+CUST053,Tammy,Garcia,townsendnicholas@example.net,+1-510-562-1299,5533 Gill Cliffs,West Laura,MD,11651,1979-06-17,45
+CUST054,Karen,Bradley,rsmith@example.com,(981)467-9044x16367,759 Dean Ranch,South Colinfurt,AL,76401,1974-05-16,51
+CUST055,Melanie,White,jmassey@example.net,289.915.5435x1160,242 Teresa Meadows Apt. 593,East Steven,CT,07516,1966-04-29,59
+CUST056,Cindy,Morales,rbryant@example.net,655-534-4456x532,506 Craig Inlet Apt. 276,East Jeffreytown,SD,51277,1968-06-21,56
+CUST057,Matthew,Jacobson,xperkins@example.org,288.399.0862,038 Kenneth Port,New Brittany,AK,23831,1955-11-13,69
+CUST058,Katherine,Mejia,oallen@example.org,+1-699-442-0532x55821,107 Rodriguez Branch,Joseview,ME,75276,1963-11-16,61
+CUST059,Evelyn,Mccoy,fbailey@example.org,001-837-391-7259x8099,532 Day Dam Apt. 829,Molinaton,WY,15980,1961-11-12,63
+CUST060,Johnny,Brown,bmyers@example.net,501.206.2555,3422 Cobb Islands,Catherineton,AS,23959,1956-01-22,69
+CUST061,Jeffrey,Nichols,melissa55@example.com,4599143580,45181 Melissa Trace,Lake Staceystad,VT,42694,1981-02-22,44
+CUST062,Christina,Nichols,adamsrobin@example.org,554-373-6333x830,9251 Christopher Plains Apt. 776,Wilsonview,WA,93696,1957-05-17,68
+CUST063,Jennifer,Wiggins,chelsea21@example.net,+1-256-221-7710x36968,4420 Jessica Spur,Fryshire,CO,68730,1964-10-23,60
+CUST064,Stacy,Valencia,qbradshaw@example.org,772-939-8634,2134 Erik Stream,Jonathanfort,MA,56976,1983-10-09,41
+CUST065,Sharon,Wall,kimberly15@example.com,(467)249-5191,676 Rogers Ville,Richardsontown,MH,49518,1985-06-06,39
+CUST066,Andrea,Sullivan,bennettjohn@example.org,001-238-673-1610x60836,49402 Lori Key,South Michelle,SC,56675,1970-11-20,54
+CUST067,Candice,Ross,lori29@example.com,315-958-5586,793 Adrian Plaza,Emilyside,VT,14231,1956-01-04,69
+CUST068,David,Elliott,tyrone91@example.com,890.972.8465,543 Pham Lodge,South Alexaland,LA,55552,1972-08-20,52
+CUST069,Justin,Sampson,xscott@example.org,2213628636,018 Griffin Flat Suite 701,Greenside,PR,95703,1954-09-02,70
+CUST070,Alexis,Robinson,lesliesanders@example.org,001-807-925-5287x014,42645 Dawn Harbor,Lake Jenniferport,PW,02720,1966-12-06,58
+CUST071,Michael,Perkins,zacharywiley@example.com,733-614-8871,15105 Shelly Highway Suite 856,North Josemouth,TX,75674,1959-12-13,65
+CUST072,Michael,Brown,harrispaul@example.com,299-541-9303,37677 Olson Extensions Apt. 860,Lake Nicole,CO,98053,1980-01-15,45
+CUST073,Clinton,Hernandez,robertsonwilliam@example.org,+1-524-971-3115,6281 Clark Ridges Suite 685,Beckburgh,GA,94501,1984-12-23,40
+CUST074,Benjamin,Gutierrez,kentryan@example.org,(271)580-9405,276 Antonio Park,Ballville,PR,86344,1967-11-30,57
+CUST075,Kathryn,Jenkins,vrichardson@example.net,3272855133,77593 Gonzalez Grove,East Kimberly,KY,18749,1984-07-26,40
+CUST076,Jeffrey,Glover,andrewjackson@example.org,9062368555,4117 Andrew Cliff Suite 938,Pamelafort,MI,33469,1985-10-19,39
+CUST077,Courtney,Wood,colematthew@example.org,370-824-7366x66426,853 Mcguire Junctions,Stephanieville,TN,88636,1962-10-08,62
+CUST078,Breanna,Jennings,walter87@example.com,001-853-427-1852x26708,643 Chen Fields Apt. 242,East Angelashire,SC,38748,1988-05-01,37
+CUST079,Patrick,Allen,robbinsryan@example.net,929-724-8318,0540 Watkins Landing,New Brianfort,PA,64149,1962-11-13,62
+CUST080,Kimberly,Raymond,collinsnicholas@example.org,909.698.6277x1442,0010 Terry Drives,South Christine,ME,63438,1960-10-19,64
+CUST081,Timothy,Gonzalez,jordantim@example.org,(484)845-2385,0033 Garcia Drive,Lake Gary,MA,17869,1962-05-09,63
+CUST082,Tiffany,Hernandez,mike82@example.com,001-292-658-3580,915 Patricia Valley,Timothyfurt,NE,06282,1997-05-27,27
+CUST083,Jennifer,Jackson,zmunoz@example.net,291.888.7353x9622,944 Daniel Club Suite 350,New Shannonborough,CA,86145,1986-03-27,39
+CUST084,Cory,Downs,christineraymond@example.net,(778)664-3762,5347 Logan Points,Port Amanda,MA,57724,1961-11-16,63
+CUST085,Kurt,Snow,jenniferwilson@example.com,980.962.5881,8191 Teresa Overpass,Stephenstad,NH,42854,1959-08-31,65
+CUST086,Christine,Donovan,justin38@example.org,(544)671-6694,5083 Gary Streets,East Christian,MI,87294,1963-03-21,62
+CUST087,Ronald,Stewart,andreasmith@example.net,(538)289-7058,6037 Elizabeth Villages,Erinview,SC,06983,1970-03-02,55
+CUST088,Catherine,Davis,gpace@example.org,884-271-9157,767 Meredith Haven,Brianfurt,SC,91075,1963-10-05,61
+CUST089,Amanda,Brown,brandonstewart@example.com,001-374-792-2075x6680,0860 Monica Lock,Davismouth,NH,82654,1965-01-24,60
+CUST090,Jennifer,Greene,cookyvonne@example.org,001-776-366-6717x43182,6487 Amber Locks Suite 549,Kristinestad,RI,03790,1965-02-18,60
+CUST091,William,Hudson,zprice@example.net,7554698405,36984 Justin Club,Alexastad,IL,13029,1975-10-26,49
+CUST092,Dakota,Evans,elizabeth90@example.com,618.754.9098,5605 Sheila Route Suite 150,Lake Alexismouth,MD,47923,1959-12-26,65
+CUST093,Tammy,Pena,canderson@example.net,345.210.6245x86631,10264 Jeffrey Fall,Lucasberg,CT,93603,1953-03-15,72
+CUST094,Thomas,Rodriguez,adavis@example.org,303.535.0468,84739 Rose Skyway,Sabrinaside,PR,57554,1962-01-29,63
+CUST095,Douglas,Juarez,marioellison@example.net,267-372-8008x1217,18807 Andrew Green,North Elizabeth,DC,09917,1955-03-27,70
+CUST096,Omar,Horton,haroldboyd@example.org,(796)547-5320x56288,04919 Katie Flats,South Donaldburgh,DE,36011,1973-09-20,51
+CUST097,Michael,Owens,briansmith@example.net,862.859.7796x2156,2580 Smith Underpass,Floresville,ID,03346,2000-03-25,25
+CUST098,Wendy,Martinez,morrisnicole@example.com,001-710-319-8932x794,4713 Cheryl Harbor Apt. 470,Christopherchester,MT,01233,1979-12-03,45
+CUST099,Kenneth,Sandoval,veronica34@example.org,555.329.8080x083,7130 Smith Ways,West Kristinmouth,PR,08129,1969-08-09,55

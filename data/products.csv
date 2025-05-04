@@ -1,0 +1,11 @@
+product_id,product_name,coverage_type,term_length_years,base_premium,max_coverage_amount
+PROD000,Term Life Basic,Term Life,10.0,430.27,206337.01
+PROD001,Term Life Plus,Term Life,20.0,342.79,929692.59
+PROD002,Whole Life Standard,Whole Life,,446.13,967974.83
+PROD003,Whole Life Premium,Whole Life,,121.49,876613.24
+PROD004,Universal Life Flex,Universal Life,,446.5,800012.58
+PROD005,Universal Life Plus,Universal Life,,289.68,376504.13
+PROD006,Variable Life Growth,Variable Life,,490.1,816925.43
+PROD007,Variable Life Balanced,Variable Life,,468.99,921211.92
+PROD008,Indexed Universal Life,Indexed Universal Life,,446.05,704750.86
+PROD009,Final Expense,Whole Life,,167.7,857847.85

@@ -23,7 +23,7 @@ conn = duckdb.connect(str(DB_PATH))
 schema_info = conn.execute("""
 SELECT 
     table_name,
-    COALESCE(column_name, '') as column_name,
+    COALESCE(column_name, '<table_descr>') as column_name,
     description
 FROM schema_metadata
 ORDER BY 
