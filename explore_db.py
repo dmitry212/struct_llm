@@ -8,6 +8,8 @@
 import duckdb
 import polars as pl
 from pathlib import Path
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Set up the database connection
 DB_PATH = Path("data/database.db")
@@ -93,6 +95,29 @@ ORDER BY o.order_date DESC
 """).pl()
 
 customer_orders
+
+# %%
+# Monthly sales across all products
+monthly_sales = conn.execute("""
+SELECT 
+    DATE_TRUNC('month', order_date) as month,
+    SUM(quantity * price) as total_sales
+FROM orders o
+JOIN products p ON o.product_id = p.product_id
+GROUP BY DATE_TRUNC('month', order_date)
+ORDER BY month
+""").pl()
+
+# Create the visualization
+plt.figure(figsize=(12, 6))
+sns.set_style("whitegrid")
+plt.plot(monthly_sales['month'], monthly_sales['total_sales'], marker='o', linewidth=2)
+plt.title('Monthly Sales Across All Products', fontsize=14, pad=15)
+plt.xlabel('Month', fontsize=12)
+plt.ylabel('Total Sales ($)', fontsize=12)
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
 
 # %% [markdown]
 # ## Your Turn!
