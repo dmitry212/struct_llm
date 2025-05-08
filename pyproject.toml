@@ -1,9 +1,9 @@
 [project]
 name = "struct_llm"
 version = "0.1.0"
-description = "A new Python project"
+description = "A project for structured data analysis using LLMs"
 authors = [
-    {name = "Your Name", email = "your.email@example.com"},
+    { name = "Dmitry Goodman", email = "dmitry.goodman@gmail.com" }
 ]
 dependencies = [
     "pandas>=2.0.0",
@@ -11,9 +11,10 @@ dependencies = [
     "matplotlib>=3.8.0",
     "seaborn>=0.13.0",
     "duckdb>=0.9.0",
-    "polars>=0.20.0"
+    "polars>=0.20.0",
+    "requests>=2.31.0"
 ]
-requires-python = ">=3.11"
+requires-python = ">=3.8"
 
 [build-system]
 requires = ["hatchling"]
@@ -21,4 +22,4 @@ build-backend = "hatchling.build"
 
 [tool.ruff]
 line-length = 88
-target-version = "py311" 
+target-version = "py38" 
