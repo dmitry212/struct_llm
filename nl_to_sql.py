@@ -22,11 +22,8 @@ client = OpenAI(api_key=api_key)
 DB_PATH = Path("data/database.db")
 conn = duckdb.connect(str(DB_PATH))
 
-def get_table_metadata() -> str:
+def get_table_metadata() -> Dict:
     """Get metadata about all tables and their columns from DuckDB using our schema_metadata table."""
-    print("\n=== Fetching Database Metadata ===")
-
-    # Get metadata for all tables and columns
     metadata_query = """
     SELECT 
         table_name,
@@ -35,49 +32,39 @@ def get_table_metadata() -> str:
     FROM schema_metadata
     ORDER BY 
         table_name,
-        -- Show table descriptions first, then column descriptions
         column_name IS NOT NULL,
         column_name
     """
-    print("Executing metadata query...")
     metadata_rows = conn.execute(metadata_query).fetchall()
-    print(f"Retrieved {len(metadata_rows)} metadata rows")
-
-    # Format metadata into a readable string
-    current_table = None
-    metadata_parts = []
-    current_table_info = []
-
+    
+    # Organize metadata by table
+    tables = {}
     for table_name, column_name, description in metadata_rows:
-        if current_table != table_name:
-            # Start a new table section
-            if current_table_info:
-                metadata_parts.append('\n'.join(current_table_info))
-            current_table = table_name
-            current_table_info = [f"Table: {table_name}"]
-            # Add table description if this is a table-level metadata
-            if column_name is None:
-                current_table_info.append(f"Description: {description}")
-                current_table_info.append("Columns:")
-        elif column_name is not None:  # Skip table-level descriptions here
-            # Add column information
-            current_table_info.append(f"- {column_name}: {description}")
+        if table_name not in tables:
+            tables[table_name] = {
+                'description': None,
+                'columns': []
+            }
+        if column_name is None:
+            tables[table_name]['description'] = description
+        else:
+            tables[table_name]['columns'].append((column_name, description))
+    
+    return tables
 
-    # Add the last table's information
-    if current_table_info:
-        metadata_parts.append('\n'.join(current_table_info))
-
-    print(f"Metadata returned {metadata_parts}")
-    return '\n\n'.join(metadata_parts)
-
-def create_prompt(user_question: str, metadata: str) -> str:
+def create_prompt(user_question: str, metadata: Dict) -> str:
     """Create a prompt for the LLM that includes database schema and user question."""
-    print("\n=== Creating Prompt ===")
-    print(f"User Question: {user_question}")
+    # Convert metadata dict to string format
+    metadata_str = "\n\n".join([
+        f"Table: {table_name}\nDescription: {info['description']}\nColumns:\n" + 
+        "\n".join([f"- {col_name}: {col_desc}" for col_name, col_desc in info['columns']])
+        for table_name, info in metadata.items()
+    ])
+    
     prompt = f"""You are a SQL expert. Given the following database schema and user question, generate a SQL query.
 
 Database Schema:
-{metadata}
+{metadata_str}
 
 User Question: {user_question}
 
@@ -96,13 +83,10 @@ Example of correct column references:
 - products.product_id (correct)
 - product_id (incorrect - ambiguous)
 """
-    print(f"Generated prompt length: {len(prompt)} characters")
     return prompt
 
 def get_sql_from_openai(prompt: str) -> str:
     """Send prompt to OpenAI API and get SQL query response."""
-    print("\n=== Sending to OpenAI API ===")
-    print(f"Prompt: {(prompt)}")
     try:
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
@@ -112,50 +96,46 @@ def get_sql_from_openai(prompt: str) -> str:
             ],
             temperature=0.1  # Low temperature for more deterministic SQL generation
         )
-        sql = response.choices[0].message.content.strip()
-        print("Successfully received SQL query:")
-        print(sql)
-        return sql
+        
+        return response.choices[0].message.content.strip()
     except Exception as e:
-        print(f"Error from OpenAI API: {str(e)}")
         raise Exception(f"Error from OpenAI API: {str(e)}")
 
 def execute_query(sql: str) -> pl.DataFrame:
     """Execute SQL query and return results as a Polars DataFrame."""
-    print("\n=== Executing Query ===")
-    print(f"SQL Query: {sql}")
-    result = conn.execute(sql).fetchdf()
-    print(f"Query returned {len(result)} rows")
-    print(f"Columns: {result.columns.tolist()}")
-    return pl.from_pandas(result)
+    try:
+        result = conn.execute(sql).fetchdf()
+        return pl.from_pandas(result)
+    except Exception as e:
+        raise Exception(f"Error executing query: {str(e)}")
 
-def main():
-    print("\n=== Starting Natural Language to SQL Converter ===")
-    # Get database metadata
+def process_question(user_question: str) -> tuple[str, pl.DataFrame]:
+    """Process a user question and return the generated SQL and results."""
     metadata = get_table_metadata()
+    prompt = create_prompt(user_question, metadata)
+    sql = get_sql_from_openai(prompt)
+    result = execute_query(sql)
+    return sql, result
 
+if __name__ == "__main__":
+    print("\n=== Starting Natural Language to SQL Converter ===")
+    metadata = get_table_metadata()
+    
     print("\nWelcome to Natural Language to SQL Converter!")
     print("Type 'exit' to quit.")
-
+    
     while True:
-        # Get user question
         user_question = input("\nEnter your question about the data: ")
         if user_question.lower() == 'exit':
             print("\nExiting...")
             break
-
+            
         try:
-            # Generate SQL from question
-            prompt = create_prompt(user_question, metadata)
-            sql = get_sql_from_openai(prompt)
-
-            # Execute query and show results
-            result = execute_query(sql)
+            sql, result = process_question(user_question)
+            print("\nGenerated SQL:")
+            print(sql)
             print("\nQuery Results:")
             print(result)
-
+            
         except Exception as e:
-            print(f"\nError: {str(e)}")
-
-if __name__ == "__main__":
-    main() 
+            print(f"\nError: {str(e)}") 
