@@ -72,6 +72,17 @@ User Question: {user_question}
 Generate a SQL query that answers the user's question. Return ONLY the raw SQL query without any explanation, markdown formatting, or code blocks.
 The query should be compatible with DuckDB SQL dialect.
 DO NOT include any markdown formatting like ```sql or ```.
+
+IMPORTANT SQL RULES:
+1. ALWAYS prefix column names with their table name (e.g., use 'orders.product_id' instead of just 'product_id')
+2. Use table aliases when joining tables (e.g., 'FROM orders o JOIN products p')
+3. When referencing columns in SELECT, WHERE, or JOIN conditions, always use the full table reference
+4. If a column exists in multiple tables, you MUST specify which table it comes from
+
+Example of correct column references:
+- orders.product_id (correct)
+- products.product_id (correct)
+- product_id (incorrect - ambiguous)
 """
     print(f"Generated prompt length: {len(prompt)} characters")
     return prompt
