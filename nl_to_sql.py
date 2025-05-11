@@ -1,10 +1,22 @@
+import json
+import os
+from pathlib import Path
+from typing import Dict, List, Optional
+
 import duckdb
 import polars as pl
-from pathlib import Path
 import requests
-import json
-from typing import Dict, List, Optional
-import argparse
+from dotenv import load_dotenv
+from openai import OpenAI
+
+# Load environment variables
+load_dotenv()
+
+# Set up OpenAI client
+api_key = os.getenv('OPENAI_API_KEY')
+if not api_key:
+    raise ValueError("OPENAI_API_KEY not found in environment variables")
+client = OpenAI(api_key=api_key)
 
 # Set up the database connection
 DB_PATH = Path("data/database.db")
@@ -13,7 +25,7 @@ conn = duckdb.connect(str(DB_PATH))
 def get_table_metadata() -> str:
     """Get metadata about all tables and their columns from DuckDB using our schema_metadata table."""
     print("\n=== Fetching Database Metadata ===")
-    
+
     # Get metadata for all tables and columns
     metadata_query = """
     SELECT 
@@ -30,12 +42,12 @@ def get_table_metadata() -> str:
     print("Executing metadata query...")
     metadata_rows = conn.execute(metadata_query).fetchall()
     print(f"Retrieved {len(metadata_rows)} metadata rows")
-    
+
     # Format metadata into a readable string
     current_table = None
     metadata_parts = []
     current_table_info = []
-    
+
     for table_name, column_name, description in metadata_rows:
         if current_table != table_name:
             # Start a new table section
@@ -50,11 +62,11 @@ def get_table_metadata() -> str:
         elif column_name is not None:  # Skip table-level descriptions here
             # Add column information
             current_table_info.append(f"- {column_name}: {description}")
-    
+
     # Add the last table's information
     if current_table_info:
         metadata_parts.append('\n'.join(current_table_info))
-    
+
     print(f"Metadata returned {metadata_parts}")
     return '\n\n'.join(metadata_parts)
 
@@ -87,26 +99,26 @@ Example of correct column references:
     print(f"Generated prompt length: {len(prompt)} characters")
     return prompt
 
-def get_sql_from_ollama(prompt: str) -> str:
-    """Send prompt to Ollama API and get SQL query response."""
-    print("\n=== Sending to Ollama API ===")
+def get_sql_from_openai(prompt: str) -> str:
+    """Send prompt to OpenAI API and get SQL query response."""
+    print("\n=== Sending to OpenAI API ===")
     print(f"Prompt: {(prompt)}")
-    url = "http://localhost:11434/api/generate"
-    data = {
-        "model": "mistral",
-        "prompt": prompt,
-        "stream": False
-    }
-    
-    response = requests.post(url, json=data)
-    if response.status_code == 200:
-        sql = response.json()["response"].strip()
+    try:
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "You are a SQL expert. Generate only the SQL query without any explanation or markdown formatting."},
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0.1  # Low temperature for more deterministic SQL generation
+        )
+        sql = response.choices[0].message.content.strip()
         print("Successfully received SQL query:")
         print(sql)
         return sql
-    else:
-        print(f"Error from Ollama API: {response.text}")
-        raise Exception(f"Error from Ollama API: {response.text}")
+    except Exception as e:
+        print(f"Error from OpenAI API: {str(e)}")
+        raise Exception(f"Error from OpenAI API: {str(e)}")
 
 def execute_query(sql: str) -> pl.DataFrame:
     """Execute SQL query and return results as a Polars DataFrame."""
@@ -121,27 +133,27 @@ def main():
     print("\n=== Starting Natural Language to SQL Converter ===")
     # Get database metadata
     metadata = get_table_metadata()
-    
+
     print("\nWelcome to Natural Language to SQL Converter!")
     print("Type 'exit' to quit.")
-    
+
     while True:
         # Get user question
         user_question = input("\nEnter your question about the data: ")
         if user_question.lower() == 'exit':
             print("\nExiting...")
             break
-            
+
         try:
             # Generate SQL from question
             prompt = create_prompt(user_question, metadata)
-            sql = get_sql_from_ollama(prompt)
-            
+            sql = get_sql_from_openai(prompt)
+
             # Execute query and show results
             result = execute_query(sql)
             print("\nQuery Results:")
             print(result)
-            
+
         except Exception as e:
             print(f"\nError: {str(e)}")
 
