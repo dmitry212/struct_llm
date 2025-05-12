@@ -38,9 +38,10 @@ env/
 venv/
 ENV/
 
-# Logs
+# Logs and History
 *.log
 nl_to_sql.log
+query_history.json
 
 # OS
 .DS_Store
