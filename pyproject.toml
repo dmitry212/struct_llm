@@ -3,7 +3,7 @@ name = "struct_llm"
 version = "0.1.0"
 description = "A project for structured data analysis using LLMs"
 authors = [
-    { name = "Dmitry Goodman", email = "dmitry.goodman@gmail.com" }
+    { name = "Dmitry Goodman" }
 ]
 dependencies = [
     "pandas>=2.0.0",

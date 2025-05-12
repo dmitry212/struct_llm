@@ -38,6 +38,10 @@ env/
 venv/
 ENV/
 
+# Logs
+*.log
+nl_to_sql.log
+
 # OS
 .DS_Store
 Thumbs.db 

@@ -61,7 +61,7 @@ This application demonstrates the conversion of natural language queries into SQ
   - Implement automatic metadata updates when data changes
   - Add data quality metrics and anomaly detection
 
-### Additional Features
+### Additional Potential Features
 - **Query Export**: Ability to export query results to various formats (CSV, Excel, etc.)
 - **Custom Schema Support**: Allow users to define and use their own database schemas
 - **Query Templates**: Pre-built templates for common query patterns
